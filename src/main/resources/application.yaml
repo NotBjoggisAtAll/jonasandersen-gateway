@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: main_site
+          uri: http://kourier-internal.knative-serving.svc.cluster.local:80
+          predicates:
+            - Host=jonasandersen.no
+          filters:
+            - name: SetRequestHostHeader
+              args:
+                hostHeader: website.jonasandersen-no.svc.cluster.local
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
