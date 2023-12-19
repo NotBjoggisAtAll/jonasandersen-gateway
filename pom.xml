@@ -54,7 +54,7 @@
         <configuration>
           <image>
             <builder>paketobuildpacks/builder-jammy-tiny</builder>
-            <name>bjoggis/${project.artifactId}:v${project.version}-${os.detected.arch}
+            <name>bjoggis/${project.artifactId}:${project.version}-${os.detected.arch}
             </name>
           </image>
         </configuration>
