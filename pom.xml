@@ -11,7 +11,7 @@
   </parent>
   <groupId>com.bjoggis</groupId>
   <artifactId>jonasandersen-gateway</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.5-SNAPSHOT</version>
   <name>jonasandersen-gateway</name>
   <description>jonasandersen-gateway</description>
   <properties>
