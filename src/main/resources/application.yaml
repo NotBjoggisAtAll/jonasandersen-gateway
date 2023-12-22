@@ -5,7 +5,7 @@ spring:
         - id: main_site
           uri: http://kourier-internal.knative-serving.svc.cluster.local:80
           predicates:
-            - Host=www.jonasandersen.no
+            - Host=gateway.jonasandersen-no.svc.cluster.local
           filters:
             - name: SetRequestHostHeader
               args:
