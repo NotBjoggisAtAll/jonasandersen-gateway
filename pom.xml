@@ -11,7 +11,7 @@
   </parent>
   <groupId>com.bjoggis</groupId>
   <artifactId>jonasandersen-gateway</artifactId>
-  <version>0.0.5-SNAPSHOT</version>
+  <version>0</version>
   <name>jonasandersen-gateway</name>
   <description>jonasandersen-gateway</description>
   <properties>
@@ -60,13 +60,6 @@
         </configuration>
       </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.7.1</version>
-      </extension>
-    </extensions>
   </build>
 
 </project>
