@@ -38,9 +38,10 @@ public class JonasandersenGatewayApplication {
       if (StringUtils.hasText(pathPrefix)) {
         routes.route(r -> r
             .predicate(subdomainRoutePredicateFactory.apply(new Config(routeInfo.patterns()))
-                .and(pathRoutePredicateFactory.apply(c -> c.setPatterns(List.of(pathPrefix)))))
+                .and(pathRoutePredicateFactory.apply(
+                    c -> c.setPatterns(List.of("/%s/**".formatted(pathPrefix))))))
             .filters(f -> f.setHostHeader(routeInfo.hostHeader())
-                .rewritePath("%s/(?<segment>.*)".formatted(pathPrefix), "/${segment}"))
+                .rewritePath("/%s/(?<segment>.*)".formatted(pathPrefix), "/${segment}"))
             .uri("http://kourier-internal.knative-serving.svc.cluster.local:80")
         );
       } else {

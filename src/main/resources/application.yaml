@@ -12,7 +12,7 @@ jonas:
       - patterns:
           - api.jonasandersen.no
         host-header: linode4j.jonasandersen-no.svc.cluster.local
-        path-prefix: /linode/**
+        path-prefix: linode
 management:
   endpoints:
     web:
