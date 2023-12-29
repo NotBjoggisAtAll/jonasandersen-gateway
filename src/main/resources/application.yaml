@@ -11,7 +11,7 @@ jonas:
         host-header: login.jonasandersen-no.svc.cluster.local
       - patterns:
           - api.jonasandersen.no
-        host-header: linode.jonasandersen-no.svc.cluster.local
+        host-header: linode4j.jonasandersen-no.svc.cluster.local
         path-prefix: /linode
 management:
   endpoints:
