@@ -9,3 +9,10 @@ jonas:
       - patterns:
           - login.jonasandersen.no
         host-header: login.jonasandersen-no.svc.cluster.local
+      - patterns:
+          - api.jonasandersen.no
+        host-header: linode.jonasandersen-no.svc.cluster.local
+        path-prefix: /linode
+
+
+
