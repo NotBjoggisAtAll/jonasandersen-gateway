@@ -24,7 +24,7 @@ jobs:
           docker-username: DOCKER_LOGIN
           docker-password: DOCKERHUB_PASSWORD
       - docker/push:
-          image: bjoggis/$CIRCLE_PROJECT_REPONAME
+          image: bjoggis/jonasandersen-gateway
           tag: $CIRCLE_TAG-aarch_64
 
 workflows:
