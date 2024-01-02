@@ -40,7 +40,23 @@ jobs:
 
       - name: Push Images to Docker Registry
         run: docker push -a bjoggis/jonasandersen-gateway
-      - name: Create and push manifest
+  manifest:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: pull-arm64
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 5
+          retry_wait_seconds: 60
+          max_attempts: 6
+          command: docker pull bjoggis/jonasandersen-gateway:${{ github.ref_name }}-aarch_64
+      - name: create-manifest
         run: |
           docker manifest create bjoggis/jonasandersen-gateway:${{ github.ref_name }} bjoggis/jonasandersen-gateway:${{ github.ref_name }}-x86_64
           docker manifest push bjoggis/jonasandersen-gateway:${{ github.ref_name }}
