@@ -57,7 +57,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
           <image>
-            <builder>paketobuildpacks/builder-jammy-tiny</builder>
+            <builder>dashaun/builder:tiny</builder>
             <name>bjoggis/${project.artifactId}:v${project.version}-${os.detected.arch}
             </name>
           </image>
